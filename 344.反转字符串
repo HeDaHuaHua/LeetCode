@@ -1,0 +1,36 @@
+# 反转字符串
+from functools import reduce
+
+
+def revers_string(s):
+    print(s[::-1])  # 表示从最后一个开始截取字符串，
+
+
+revers_string('hello')
+
+
+# 使用reduce
+print(reduce(lambda x, y: y+x, 'hello')) #  把前两个作为变量x,y y+x 即eh,然后这个作为x,l作为y,y+x 就变成leh 迭代出来就是olleh 妙呀
+
+
+# 使用堆栈
+def func(s):
+    ss = list(s)
+    result = ""
+    while len(ss) > 0:
+        result = result + ss.pop()  # 模拟出栈
+    return result
+
+
+print(func('hello'))
+
+
+# 使用for循环
+def funct(s):
+    result = ""
+    for i in s:
+        result = i + result
+    return result
+
+
+print(funct('world'))

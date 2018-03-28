@@ -1,0 +1,63 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def maxDepth(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int      
+        """
+  
+        if root == None:
+            return 0
+        ldepth = Solution.maxDepth(self, root.left)    # 二叉树一般都是递归呦
+        rdepth = Solution.maxDepth(self, root.right)
+        return max(ldepth, rdepth) + 1
+        
+'''       
+# 实现一个二叉树遍历
+# 首先，定义二叉树中的结点
+class TreeNode(object):
+    def __init__(self, val, left=None, right=None):
+        self.val = val
+        self.right = right
+        self.left = left
+
+
+# 定义二叉树的类：
+class BinaryTree(object):
+    def __init__(self, root=None):
+        self.root = root
+
+
+def preOrder(retList, node):  # 先序遍历
+    if node != None:
+        retList.append(node)
+        preOrder(retList, node.left)
+        preOrder(retList, node.right)
+    return retList
+
+
+def inOrder(retList, node):  # 中序遍历
+    if node != None:
+        inOrder(retList, node.left)
+        retList.append(node)
+        inOrder(retList, node.right)
+    return retList
+
+
+def postOrder(retList, node):  # 后序遍历
+    if node != None:
+        postOrder(retList, node.left)
+        postOrder(retList, node.right)
+        retList.append(node)
+    return retList
+'''     
+        
+        
+        
+        

@@ -1,0 +1,23 @@
+class Solution:
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):   # 如果不加这个，会导致长度不等的时候，下面的判断会溢出
+            return False
+        
+        lists = list(s)
+        listt = list(t)
+        
+        lists.sort()
+        listt.sort()
+        
+        for i in range(len(listt)):
+            if lists[i] != listt[i]:
+                return False
+        return True
+        
+        
+        
